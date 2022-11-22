@@ -1,0 +1,29 @@
+myfile = open("sample.txt", "r")
+
+lines=myfile.readlines()
+str=''
+d={}
+
+def apple(str):
+    tempfile=str.split('\n')
+    cnt=0
+    length=len(tempfile)
+    while cnt<length-2:
+        d[tempfile[cnt]]=tempfile[cnt+1]
+        cnt=cnt+2
+    print(d)
+
+for line in lines:
+    if 'start' in line:
+        str=''
+    elif 'ends' in line:
+        apple(str)
+    else:
+        str=str+line
+
+
+
+
+
+
+
